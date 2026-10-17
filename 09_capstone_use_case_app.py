@@ -115,5 +115,6 @@ with gr.Blocks(title="AI Use-Case Discovery Assistant") as demo:
     output = gr.Markdown()
     button.click(discover, [domain, role, problem, task, outcome, creativity], output)
 
-# Start the web app.
-demo.launch()
+# Start the web app (only when run directly: uv run 09_capstone_use_case_app.py).
+if __name__ == "__main__":
+    demo.launch()

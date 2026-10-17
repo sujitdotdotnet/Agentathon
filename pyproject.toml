@@ -1,5 +1,5 @@
 [tool.vercel]
-entrypoint = "09_capstone_use_case_app:app"
+entrypoint = "app:app"
 
 [build-system]
 requires=["setuptools>=61.0"]
