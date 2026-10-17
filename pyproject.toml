@@ -1,3 +1,6 @@
+[tool.vercel]
+entrypoint = "09_capstone_use_case_app.py"
+
 [build-system]
 requires=["setuptools>=61.0"]
 build-backend="setuptools.build_meta"
@@ -19,3 +22,4 @@ dependencies=[
 
 [tool.uv]
 package=false
+
