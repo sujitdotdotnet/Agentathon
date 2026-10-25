@@ -9,6 +9,7 @@ import json
 import requests
 import gradio as gr
 from dotenv import load_dotenv
+from fastapi import FastAPI
 
 import tools
 import agent
@@ -666,5 +667,9 @@ with gr.Blocks(title="VulnGuard-ReAct | Cybersecurity AI Agent") as demo:
             3. **Defensive Alignment**: Strictly engineered for cyber defense, patch verification, vulnerability remediation, and enterprise risk reduction.
             """)
 
+# Vercel entrypoint (pyproject.toml -> [tool.vercel] entrypoint = "app:app").
+# Gradio is mounted at "/" on a FastAPI app; the ASGI app is named `app`.
+app = gr.mount_gradio_app(FastAPI(), demo, path="/")
+
 if __name__ == "__main__":
-    demo.launch(server_name="127.0.0.1", server_port=7860, share=False)
+    demo.launch()
